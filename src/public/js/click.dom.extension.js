@@ -2,12 +2,13 @@
 // Info:
 //     document = DOM de la web
 //     chrome = SI definido
-ms = 2000;
+ms = 400;
 
 l = location;
 if ( isZonaecomCheckout(l) ) {
 
-    setTimeout(() => {
+    window.focus();
+
         // Paste data in inputs
         chrome.storage.sync.get(['data'], (result) => {
             let jsonData = result.data;
@@ -25,9 +26,9 @@ if ( isZonaecomCheckout(l) ) {
                         }
                     }
                 }
+                if (document.activeElement) document.activeElement.blur();
             }, ms);
         });
-    }, ms);
 } else if ( isOrderShokys(l) ) {
 
     // Copy data from client modal
