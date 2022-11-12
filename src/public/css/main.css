@@ -1,0 +1,53 @@
+#mi-ext-zonaecom_copypaste ,
+#mi-ext-zonaecom_copypaste * {
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:sans-serif, Arial;
+    font-size:14px;
+    color:#848484;
+}
+
+
+
+
+#mi-ext-zonaecom_copypaste {
+    width:400px;
+    padding:20px;
+}
+
+.flex-box {
+    display:flex;
+    justify-content:flex-start;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+p {
+    margin-bottom:10px !important;
+}
+
+button {
+    width:calc( 50% - 5px );
+    border:0;
+    color:#fff;
+    background:#00aced;
+    height:40px;
+    border-radius:5px;
+    margin-right:10px !important;
+    cursor:pointer;
+    color:#fff !important;
+}
+button:last-child {
+    margin-right:0 !important;
+}
+button.btn-azul {
+    background:#00aced;
+}
+button.btn-verde {
+    background:#00ed7e;
+}
+button.btn-large {
+    width:100%;
+    margin-right:0;
+}
