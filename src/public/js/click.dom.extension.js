@@ -2,32 +2,33 @@
 // Info:
 //     document = DOM de la web
 //     chrome = SI definido
-ms = 2000;
+ms = 400;
 
 l = location;
 if ( isZonaecomCheckout(l) ) {
 
-    setTimeout(() => {
-        // Paste data in inputs
-        chrome.storage.sync.get(['data'], (result) => {
-            let jsonData = result.data;
-            let countryKey = 'country';
-            let countryNode = document.querySelector(getName(countryKey));
-            if (countryNode) {
-                pasteData(countryNode, jsonData[countryKey]);
-            }
-            setTimeout(() => {
-                for ( let k in jsonData ) {
-                    if (k !== countryKey) {
-                        let node = document.querySelector(getName(k));
-                        if (node) {
-                            pasteData(node, jsonData[k]);
-                        }
+    window.focus();
+
+    // Paste data in inputs
+    chrome.storage.sync.get(['data'], (result) => {
+        let jsonData = result.data;
+        let countryKey = 'country';
+        let countryNode = document.querySelector(getName(countryKey));
+        if (countryNode) {
+            pasteData(countryNode, jsonData[countryKey]);
+        }
+        setTimeout(() => {
+            for ( let k in jsonData ) {
+                if (k !== countryKey) {
+                    let node = document.querySelector(getName(k));
+                    if (node) {
+                        pasteData(node, jsonData[k]);
                     }
                 }
-            }, ms);
-        });
-    }, ms);
+            }
+            if (document.activeElement) document.activeElement.blur();
+        }, ms);
+    });
 } else if ( isOrderShokys(l) ) {
 
     // Copy data from client modal
