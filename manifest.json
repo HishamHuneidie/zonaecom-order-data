@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "ZonaEcom copy/paste",
-    "version": "0.1",
+    "version": "1.0",
     "action": {
         "default_popup": "src/templates/popup.html",
         "default_icon": "src/public/img/favicon.png"
