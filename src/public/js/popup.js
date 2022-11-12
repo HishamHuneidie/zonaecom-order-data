@@ -22,9 +22,17 @@ function init () {
     for ( let btn of btns ) btn.addEventListener('click', clickButton);
 
     function clickButton () {
+        console.log('Click');
+        let btn = this;
         chrome.scripting.executeScript({
             target: { tabId: tabId },
-            files: ['src/public/js/click.dom.extension.js']
+            files: [`src/public/js/functions/methods.js`]
+        }, () => {
+            console.log('Este es mi callback');
+        });
+        chrome.scripting.executeScript({
+            target: { tabId: tabId },
+            files: [`src/public/js/functions/click.dom.extension.${btn.dataset.type}.js`]
         }, () => {
             console.log('Este es mi callback');
         });

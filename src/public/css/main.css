@@ -20,11 +20,19 @@
     display:flex;
     justify-content:flex-start;
     align-items:center;
-    flex-wrap:wrap;
 }
 
 p {
     margin-bottom:10px !important;
+}
+
+.button-group {
+    display:flex;
+    width:100%;
+    margin-right:10px !important;
+}
+.button-group:last-child {
+    margin-right:0 !important;
 }
 
 button {
@@ -37,6 +45,11 @@ button {
     margin-right:10px !important;
     cursor:pointer;
     color:#fff !important;
+    white-space:nowrap;
+    padding:0 10px;
+    overflow:hidden;
+    position:relative;
+    z-index:1;
 }
 button:last-child {
     margin-right:0 !important;
@@ -50,4 +63,37 @@ button.btn-verde {
 button.btn-large {
     width:100%;
     margin-right:0;
+}
+button.btn-small {
+    width:40px;
+}
+button:before {
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0, 0, 0, 0);
+    transition:background .4s ease;
+}
+button:hover:before {
+    background:rgba(0, 0, 0, 0.1);
+}
+
+
+.button-group > button {
+    margin-right:0 !important;
+    border-radius:0;
+}
+.button-group > button:first-child {
+    border-top-left-radius:5px;
+    border-bottom-left-radius:5px;
+}
+.button-group > button:last-child {
+    border-top-right-radius:5px;
+    border-bottom-right-radius:5px;
+}
+.button-group > button:not(.btn-small) {
+    width:calc(100% - 40px);
 }
