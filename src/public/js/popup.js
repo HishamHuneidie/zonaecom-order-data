@@ -22,7 +22,7 @@ function init () {
     for ( let btn of btns ) btn.addEventListener('click', clickButton);
 
     function clickButton () {
-        console.log('Click');
+        window.close();
         let btn = this;
         chrome.scripting.executeScript({
             target: { tabId: tabId },
