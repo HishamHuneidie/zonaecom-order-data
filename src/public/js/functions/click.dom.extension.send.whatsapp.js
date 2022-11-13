@@ -13,7 +13,7 @@ if ( isDraftOrderShokys(l) ) {
     }
 
     let telefono = processMobilePhone(whatsappData.ordenData.phone);
-    let mensaje = `*Hola ${whatsappData.ordenData.firstName}*%0AYa puedes terminar tu pedido 🛒%0AClic aquí para confirmar 👇%0A${linkDrafOrder}`;
+    let mensaje = `*Hola ${whatsappData.ordenData.firstName}*%0ATe dejaste tu *rizador* en el carrito.%0AYa puedes terminar tu pedido 🛒%0AClic aquí para confirmar 👇%0A${linkDrafOrder}`;
     let url = `https://web.whatsapp.com/send/?phone=${telefono}&text=${mensaje}`;
     window.open(url, "_new");
 }
